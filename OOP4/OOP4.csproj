@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IPlant.cs" />
+    <Compile Include="VeggieBox.cs" />
     <Compile Include="Vegetables.cs" />
     <Compile Include="Plant.cs" />
     <Compile Include="Fruits.cs" />

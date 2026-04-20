@@ -2,7 +2,7 @@
 
 namespace OOP4
 {
-    class Fruits : Plant, IPlant
+    class Fruits : Plant // Успадковуємо абстрактний клас (без IPlant)
     {
         private double EnergyValue;
         private double NitrateLevel;
@@ -24,22 +24,20 @@ namespace OOP4
             EnergyValue = E; NitrateLevel = NL; Sort = Sr; BasePrice = B; Weight = W; Producer = P;
         }
 
-        public string CheckToxicity()
+        // Використовуємо override для абстрактного методу
+        public override string CheckToxicity()
         {
             if (nitrateLevel > 40) return "Увага! Перевищено норму нітратів.";
             else return "Продукт безпечний для споживання.";
         }
 
-        public double CalculateTotalCost()
-        {
-            return basePrice * weight;
-        }
+        public double CalculateTotalCost() { return basePrice * weight; }
 
         public void PrintInfo()
         {
             Console.WriteLine($"[Фрукт] Сорт: {sort}, Виробник: {producer}");
-            Console.WriteLine($"Загальна вартість партії: {CalculateTotalCost()} грн");
-            Console.WriteLine($"Статус безпеки: {CheckToxicity()}");
+            Console.WriteLine($"Вартість партії: {CalculateTotalCost()} грн");
+            Console.WriteLine($"Безпека: {CheckToxicity()}");
         }
     }
 }
